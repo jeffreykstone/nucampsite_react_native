@@ -8,17 +8,13 @@ import { postComment } from '../features/comments/commentsSlice';
 
 const CampsiteInfoScreen = ({ route }) => {
     const { campsite } = route.params;
-
     const [showModal, setShowModal] = useState(false);
     const [rating, setRating] = useState(5);
     const [author, setAuthor] = useState('');
     const [text, setText] = useState('');
-
     const comments = useSelector((state) => state.comments);
     const favorites = useSelector((state) => state.favorites);
-
     const dispatch = useDispatch();
-
     const handleSubmit = () => {
         const newComment = {
             author,
